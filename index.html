@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Akhil Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <h2 class="logo">Akhil</h2>
+
+  <ul id="nav-links">
+    <li><a href="index.html" class="nav-link active">Home</a></li>
+    <li><a href="About.html" class="nav-link">About</a></li>
+    <li><a href="projects.html" class="nav-link">Projects</a></li>
+    <li><a href="contact.html" class="nav-link">Contact</a></li>
+  </ul>
+
+  <!-- Mobile Menu -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    ☰
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+
+  <div class="left">
+    <h3>Hello, I'm</h3>
+    <h1>AKHILESH <span>GANGWAR</span></h1>
+
+    <h2>
+      I Build Scalable Applications as a <br>
+      <span class="highlight typing"></span>
+    </h2>
+
+    <p>
+      I create modern, responsive websites and AI-powered applications.
+    </p>
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <a href="#" class="btn">Download Resume</a>
+      <a href="#" class="btn outline">Hire Me</a>
+    </div>
+
+    <!-- Icons -->
+    <div class="icons">
+      <a href="https://github.com/Akhil-Techhub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/akhilesh-gangwar-0749462a2"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:akhil.techhub@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+
+  <!-- RIGHT IMAGE -->
+  <div class="right">
+    <img src="Image.png" alt="Akhil">
+
+  <!-- Wave SVG -->
+  <svg class="wave" viewBox="0 0 1440 320">
+    <path fill="#00ff9d22" d="M0,192L80,170.7C160,149,320,107,480,112C640,117,800,171,960,186.7C1120,203,1280,181,1360,170.7L1440,160V320H0Z"></path>
+  </svg>
+
+</section>
+
+<!-- CHAT BUTTON -->
+<div class="chat-toggle" onclick="toggleChat()">💬</div>
+
+<!-- CHAT BOX -->
+<div class="chat-box" id="chatBox">
+  <div class="chat-header">
+    AI Assistant
+    <span onclick="toggleChat()">✖</span>
+  </div>
+
+  <div class="chat-body" id="chatBody">
+    <p>Hello! Ask me anything 👋</p>
+  </div>
+
+  <div class="chat-input">
+    <input type="text" id="userInput" placeholder="Type message...">
+    <button onclick="sendMessage()">➤</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

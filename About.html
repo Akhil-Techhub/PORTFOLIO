@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+ /* ================= NAVBAR (ABOUT PAGE) ================= */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 60px;
+
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+}
+
+/* LOGO */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00ff9d;
+  letter-spacing: 1px;
+}
+
+/* NAV LINKS */
+nav ul {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 16px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+/* HOVER EFFECT */
+nav ul li a:hover {
+  color: #00ff9d;
+}
+
+/* UNDERLINE ANIMATION */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #00ff9d;
+  transition: 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* ACTIVE LINK (ABOUT PAGE) */
+nav ul li a.active {
+  color: #00ff9d;
+}
+
+nav ul li a.active::after {
+  width: 100%;
+}
+
+/* ================= MOBILE ================= */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  nav {
+    padding: 15px 20px;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #111;
+    flex-direction: column;
+    width: 220px;
+    padding: 20px;
+    display: none;
+    border-radius: 10px;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+    </style>
+    
+</head>
+<body>
+    
+    <section class="section">
+  <h2>About Me</h2>
+
+  <p>
+    I'm Akhil, a Web Developer skilled in HTML, CSS, JavaScript, and Python.
+  </p>
+  <p>I’m a B.Tech Computer Science student and an aspiring Full Stack Developer with a strong interest in building clean, responsive, and user-friendly web applications. I enjoy turning ideas into real projects using modern web technologies.</p>
+
+<p>I have a solid foundation in HTML and CSS and I’m continuously improving my skills in JavaScript and backend concepts. I believe in learning by doing, so I actively work on projects that help me strengthen my problem-solving ability and practical knowledge.</p>
+
+<p>I’m motivated, curious, and always eager to learn new tools and technologies. My goal is to grow as a software developer and contribute to meaningful, real-world projects while continuously improving my technical and professional skills.</p>
+
+  <h2>Skills</h2>
+
+  <div class="skill">
+    <p>HTML</p>
+    <div class="bar"><span style="width:90%"></span></div>
+  </div>
+
+  <div class="skill">
+    <p>CSS</p>
+    <div class="bar"><span style="width:85%"></span></div>
+  </div>
+
+  <div class="skill">
+    <p>JavaScript</p>
+    <div class="bar"><span style="width:75%"></span></div>
+  </div>
+</section>
+    
+<script id="aboutjs">
+/* Active link */
+document.querySelectorAll(".nav-link").forEach(link => {
+  if (link.href === window.location.href) {
+    link.classList.add("active");
+  }
+});
+
+/* Skill animation trigger */
+window.addEventListener("load", () => {
+  document.querySelectorAll(".bar span").forEach(bar => {
+    bar.style.width = bar.style.width;
+  });
+});
+
+/* Mobile menu */
+function toggleMenu() {
+  document.getElementById("nav-links").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
