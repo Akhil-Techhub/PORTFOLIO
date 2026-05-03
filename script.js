@@ -37,24 +37,39 @@ function type() {
 
 type();
 
-// Simple chatbot (replace with OpenAI later)
-function sendMessage() {
+async function sendMessage() {
   let input = document.getElementById("userInput");
   let chat = document.getElementById("chatBody");
 
-  let userText = input.value;
+  let userText = input.value.trim();
+  if (userText === "") return;
 
-  chat.innerHTML += `<p><b>You:</b> ${userText}</p>`;
-
-  let reply = "I can help with web development 🚀";
-
-  if (userText.toLowerCase().includes("project")) {
-    reply = "I build AI + Web projects.";
-  }
-
-  chat.innerHTML += `<p><b>AI:</b> ${reply}</p>`;
-
+  addMessage(userText, "user");
   input.value = "";
+
+  // typing message
+  addMessage("Typing...", "bot");
+
+  try {
+    const res = await fetch("http://localhost:3000/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ message: userText })
+    });
+
+    const data = await res.json();
+
+    // remove "Typing..."
+    chat.lastChild.remove();
+
+    addMessage(data.reply, "bot");
+
+  } catch (error) {
+    chat.lastChild.remove();
+    addMessage("Server error 😢", "bot");
+  }
 }
 // Example (Node backend needed)
 fetch("https://api.openai.com/v1/chat/completions", {
