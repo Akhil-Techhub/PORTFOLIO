@@ -6,14 +6,18 @@
   font-family: 'Poppins', sans-serif;
 }
 
+
 /* BODY BACKGROUND (Exact Style) */
 body {
   color: white;
-  background: radial-gradient(circle at 20% 30%, #1a1a1a, #0b0b0b 60%),
-              linear-gradient(120deg, #0b0b0b, #111);
+  background: radial-gradient(circle at 20% 30%, #efa3a3, #555050 60%),
+              linear-gradient(120deg, #e8a9a9, #ceaaaa);
   min-height: 100vh;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
+
+
 
 /* NAVBAR */
 /* NAVBAR */
@@ -328,7 +332,7 @@ body {
   display: inline-block;
   padding: 10px 20px;
   background: #00ff9d;
-  color: black;
+  color: rgb(2, 10, 20);
   border-radius: 25px;
   text-decoration: none;
   margin-right: 10px;
@@ -356,4 +360,108 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+
+
+/* SECTIONS */
+.section {
+  height: 100vh;
+  padding: 100px 50px;
+  text-align: center;
+}
+
+/* CARDS */
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  margin: 15px;
+  border-radius: 10px;
+}
+
+/* PROJECT GRID */
+    .projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background: #f2afaf;
+  padding: 20px;
+  border-radius: 15px;
+  width: 250px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px #272f2c;
+}
+
+.project-links {
+  margin-top: 10px;
+}
+
+.project-links a {
+  text-decoration: none;
+  background: #e9e294;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+h2 {
+  text-align: center;
+}
+
+/* CONTACT FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+}
+
+input, textarea {
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background: #ff4b2b;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* ABOUT SECTION */
+.about-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.about-text {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 10px;
+  line-height: 1.6;
+}
+
+/* SCROLL BUTTON */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #b65544;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 50%;
+  display: none;
+  cursor: pointer;
 }
