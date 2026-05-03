@@ -1,10 +1,14 @@
-// Chat toggle
+// ==========================
+// 🔹 CHAT TOGGLE
+// ==========================
 function toggleChat() {
   let chat = document.getElementById("chatBox");
   chat.style.display = chat.style.display === "block" ? "none" : "block";
 }
 
-// Typing animation
+// ==========================
+// 🔹 TYPING ANIMATION (HERO)
+// ==========================
 const words = ["Web Developer", "Software Developer", "AI Developer"];
 let i = 0, j = 0;
 let currentWord = "";
@@ -19,7 +23,8 @@ function type() {
     j++;
   }
 
-  document.querySelector(".typing").textContent = currentWord.substring(0, j);
+  document.querySelector(".typing").textContent =
+    currentWord.substring(0, j);
 
   if (!isDeleting && j === currentWord.length) {
     isDeleting = true;
@@ -34,9 +39,31 @@ function type() {
 
   setTimeout(type, isDeleting ? 50 : 100);
 }
-
 type();
 
+// ==========================
+// 🔹 ADD MESSAGE FUNCTION
+// ==========================
+function addMessage(text, sender) {
+  let chat = document.getElementById("chatBody");
+
+  let msg = document.createElement("p");
+
+  if (sender === "user") {
+    msg.innerHTML = `<b>You:</b> ${text}`;
+    msg.style.textAlign = "right";
+  } else {
+    msg.innerHTML = `<b>AI:</b> ${text}`;
+    msg.style.textAlign = "left";
+  }
+
+  chat.appendChild(msg);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+// ==========================
+// 🔹 SEND MESSAGE (AI CALL)
+// ==========================
 async function sendMessage() {
   let input = document.getElementById("userInput");
   let chat = document.getElementById("chatBody");
@@ -44,11 +71,16 @@ async function sendMessage() {
   let userText = input.value.trim();
   if (userText === "") return;
 
+  // Show user message
   addMessage(userText, "user");
   input.value = "";
 
-  // typing message
-  addMessage("Typing...", "bot");
+  // Show typing
+  let typingMsg = document.createElement("p");
+  typingMsg.innerHTML = `<b>AI:</b> Typing...`;
+  typingMsg.id = "typingMsg";
+  chat.appendChild(typingMsg);
+  chat.scrollTop = chat.scrollHeight;
 
   try {
     const res = await fetch("http://localhost:3000/chat", {
@@ -61,35 +93,38 @@ async function sendMessage() {
 
     const data = await res.json();
 
-    // remove "Typing..."
-    chat.lastChild.remove();
+    // Remove typing
+    document.getElementById("typingMsg").remove();
 
+    // Show AI reply
     addMessage(data.reply, "bot");
 
   } catch (error) {
-    chat.lastChild.remove();
+    document.getElementById("typingMsg").remove();
     addMessage("Server error 😢", "bot");
+    console.error(error);
   }
 }
-// Example (Node backend needed)
-fetch("https://api.openai.com/v1/chat/completions", {
-  method: "POST",
-  headers: {
-    "Authorization": "Bearer YOUR_API_KEY",
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    model: "gpt-4o-mini",
-    messages: [{role:"user", content:userText}]
-  })
-})
 
-// Mobile menu
+// ==========================
+// 🔹 ENTER KEY SUPPORT
+// ==========================
+document.getElementById("userInput").addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    sendMessage();
+  }
+});
+
+// ==========================
+// 🔹 MOBILE MENU
+// ==========================
 function toggleMenu() {
   document.getElementById("nav-links").classList.toggle("show");
 }
 
-// Active section highlight
+// ==========================
+// 🔹 ACTIVE NAV LINK
+// ==========================
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-link");
 
@@ -98,9 +133,8 @@ window.addEventListener("scroll", () => {
 
   sections.forEach(section => {
     const sectionTop = section.offsetTop - 100;
-    const sectionHeight = section.clientHeight;
 
-    if (scrollY >= sectionTop) {
+    if (window.scrollY >= sectionTop) {
       current = section.getAttribute("id");
     }
   });
