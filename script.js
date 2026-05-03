@@ -1,4 +1,5 @@
 // ==========================
+
 // 🔹 CHAT TOGGLE
 // ==========================
 function toggleChat() {
@@ -146,3 +147,36 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+// ================= SCROLL BUTTON =================
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.onscroll = function () {
+  if (document.documentElement.scrollTop > 200) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+};
+
+scrollBtn.onclick = function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+};
+
+// ================= NAV SCROLL FIX =================
+document.querySelectorAll("nav a").forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const target = document.querySelector(this.getAttribute("href"));
+
+    window.scrollTo({
+      top: target.offsetTop - 70,
+      behavior: "smooth"
+    });
+  });
+});
+
