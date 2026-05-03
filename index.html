@@ -17,10 +17,12 @@
   <h2 class="logo">Akhil</h2>
 
   <ul id="nav-links">
-    <li><a href="index.html" class="nav-link active">Home</a></li>
-    <li><a href="About.html" class="nav-link">About</a></li>
-    <li><a href="projects.html" class="nav-link">Projects</a></li>
-    <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="#home" class="nav-link active">Home</a></li>
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#projects" class="nav-link">Projects</a></li>
+    <li><a href="#experience" class="nav-link">Experience</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
+     
   </ul>
 
   <!-- Mobile Menu -->
@@ -31,7 +33,7 @@
 
 
 <!-- HERO -->
-<section class="hero">
+<section id="home" class="hero">
 
   <div class="left">
     <h3>Hello, I'm</h3>
@@ -45,11 +47,11 @@
     <p>
       I create modern, responsive websites and AI-powered applications.
     </p>
-
+   
     <!-- Buttons -->
     <div class="buttons">
       <a href="Resume.pdf" class="btn">Download Resume</a>
-      <a href="contact.html" class="btn outline">Hire Me</a>
+      <a href="mailto:akhil.techhub@gmail.com" class="btn outline">Hire Me</a>
     </div>
 
     <!-- Icons -->
@@ -70,8 +72,95 @@
   <svg class="wave" viewBox="0 0 1440 320">
     <path fill="#00ff9d22" d="M0,192L80,170.7C160,149,320,107,480,112C640,117,800,171,960,186.7C1120,203,1280,181,1360,170.7L1440,160V320H0Z"></path>
   </svg>
+  
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section">
+  <h1>About Me</h1>
+
+  <div class="about-container">
+    <div class="about-text">
+      <p>
+        I am <strong>Akhilesh Gangwar</strong>, a passionate Web Developer and AI enthusiast.
+        I love building modern, responsive, and interactive websites.
+      </p>
+
+      <p>
+        I work with HTML, CSS, JavaScript and currently learning backend and AI integration.
+      </p>
+
+      <p>
+        My goal is to become a full-stack developer and create impactful digital solutions.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience" class="section">
+  <h1>Experience</h1>
+  <div class="card">
+    <h3>Frontend Developer</h3>
+    <p>Worked on responsive websites using HTML, CSS, JS</p>
+  </div>
+
+  <div class="card">
+    <h3>AI Projects</h3>
+    <p>Built chatbot using OpenAI API</p>
+  </div>
+</section>
+
+<section id="projects" class="section">
+
+    <h2>My Projects  </h2>
+
+    <div class="projects">
+
+        <!-- PROJECT 1 -->
+        <div class="card">
+            <h3>Financial Fraud Detection</h3>
+            <p>ML-based system with dashboard.</p>
+
+            <div class="project-links">
+                <a href="#">GitHub</a>
+                <a href="#">Live Demo</a>
+            </div>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>Modern responsive portfolio design.</p>
+
+            <div class="project-links">
+                <a href="#">GitHub</a>
+                <a href="#">Live Demo</a>
+            </div>
+        </div>
+
+    </div>
 
 </section>
+
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section">
+  <h1>Contact Me</h1>
+
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message"></textarea>
+    <button type="submit">Send</button>
+  </form>
+
+</section>
+
+<!-- ================= SCROLL BUTTON ================= -->
+<button id="scrollTopBtn">↑</button>
 
 <!-- CHAT BUTTON -->
 <div class="chat-toggle" onclick="toggleChat()">💬</div>
@@ -92,6 +181,7 @@
     <button onclick="sendMessage()">➤</button>
   </div>
 </div>
+
 
 <script src="script.js"></script>
 </body>
