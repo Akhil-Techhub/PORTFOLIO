@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -7,17 +6,25 @@
 }
 
 
-/* BODY BACKGROUND (Exact Style) */
 body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #020617;
   color: white;
-  background: radial-gradient(circle at 20% 30%, #efa3a3, #555050 60%),
+  background: radial-gradient(circle at 20% 30%, #020617, #020617 60%),
               linear-gradient(120deg, #e8a9a9, #ceaaaa);
   min-height: 100vh;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
-
+/* 🔥 CANVAS BG */
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 
 /* NAVBAR */
 /* NAVBAR */
@@ -198,7 +205,7 @@ body {
 }
 
 .right img {
-  width: 700px;
+  width: 600px;
   border-radius: 20px;
   filter: drop-shadow(0 0 20px #00ff9d);
 }
@@ -215,6 +222,278 @@ body {
   .right img {
     margin-top: 20px;
   }
+}
+
+/* SECTIONS */
+.section {
+  height: 100vh;
+  padding: 100px 50px;
+  text-align: center;
+}
+
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero span {
+  color: #3b82f6;
+}
+
+.profile {
+  border-radius: 50%;
+}
+
+/* BUTTONS */
+.primary {
+  background: linear-gradient(90deg,#3b82f6,#9333ea);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: white;
+}
+
+.secondary {
+  border: 1px solid white;
+  background: transparent;
+}
+
+/* SOCIAL */
+.socials i {
+  margin: 10px;
+  font-size: 20px;
+}
+
+/* GLASS */
+.glass {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  margin: 40px;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  margin: 15px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px #3b82f6;
+}
+
+/* ABOUT SECTION */
+/* SECTION */
+.about-section {
+  display: flex;
+  height: 100vh; /* 🔥 full screen */
+}
+
+/* LEFT SIDE */
+.about-left {
+  width: 50%;
+}
+
+.about-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 🔥 perfect fit */
+}
+
+/* RIGHT SIDE */
+.about-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  padding: 60px;
+  gap: 20px; /* spacing */
+  background: #020617;
+}
+
+/* TEXT */
+.about-right h2 {
+  font-size: 32px;
+}
+
+.about-right h3 {
+  color: #3b82f6;
+}
+
+/* BUTTON */
+.about-btn {
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: linear-gradient(90deg,#3b82f6,#9333ea);
+  border: none;
+  color: white;
+}
+
+/* 🔥 RESPONSIVE */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .about-left, .about-right {
+    width: 100%;
+  }
+
+  .about-left img {
+    height: 300px;
+  }
+}
+
+
+
+
+/* PROJECT GRID */
+    .projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.08);
+  transition: 0.3s;
+}
+
+.card i {
+  font-size: 35px;
+  margin-bottom: 10px;
+  color: #3b82f6;
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px #3b82f6;
+}
+
+.card:hover i {
+  color: #9333ea;
+  transform: scale(1.2);
+}
+
+
+.project-links {
+  margin-top: 10px;
+}
+
+.project-links a {
+  text-decoration: none;
+  background: #e9e294;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+h2 {
+  text-align: center;
+}
+
+/* SKILLS */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  transition: 0.3s;
+}
+
+.skill i {
+  font-size: 20px;
+}
+
+/* Colors */
+.fa-html5 { color: #e34c26; }
+.fa-css3-alt { color: #264de4; }
+.fa-js { color: #f0db4f; }
+.fa-react { color: #61dbfb; }
+.fa-node-js { color: #68a063; }
+
+/* Hover Effect */
+.skill:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #3b82f6;
+}
+
+
+.skills span {
+  padding: 10px;
+  margin: 5px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+}
+
+/* TIMELINE */
+.timeline {
+  border-left: 2px solid #3b82f6;
+  margin: 40px;
+}
+
+.item {
+  margin: 20px;
+}
+
+/* CONTACT FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+}
+
+input, textarea {
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background: #ff4b2b;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 /* CHAT BUTTON */
@@ -362,94 +641,8 @@ body {
   width: 100%;
 }
 
-
-
-/* SECTIONS */
-.section {
-  height: 100vh;
-  padding: 100px 50px;
-  text-align: center;
-}
-
-/* CARDS */
-.card {
-  background: rgba(255,255,255,0.1);
-  padding: 20px;
-  margin: 15px;
-  border-radius: 10px;
-}
-
-/* PROJECT GRID */
-    .projects {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.card {
-  background: #f2afaf;
-  padding: 20px;
-  border-radius: 15px;
-  width: 250px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 20px #272f2c;
-}
-
-.project-links {
-  margin-top: 10px;
-}
-
-.project-links a {
-  text-decoration: none;
-  background: #e9e294;
-  color: black;
-  padding: 5px 10px;
-  border-radius: 10px;
-  margin-right: 5px;
-}
-
-h2 {
-  text-align: center;
-}
-
-/* CONTACT FORM */
-form {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  margin: auto;
-}
-
-input, textarea {
-  margin: 10px 0;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-}
-
-button {
-  padding: 10px;
-  background: #ff4b2b;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-/* ABOUT SECTION */
-.about-container {
-  max-width: 700px;
-  margin: auto;
-}
-
-.about-text {
-  background: rgba(255,255,255,0.1);
-  padding: 20px;
-  border-radius: 10px;
-  line-height: 1.6;
+.hidden {
+  display: none;
 }
 
 /* SCROLL BUTTON */
